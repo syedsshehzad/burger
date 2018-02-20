@@ -1,0 +1,25 @@
+
+<div id="left">
+	{{#each newburger}}
+	<p>
+		{{id}}. {{burger_name}}
+		<button id="{{id}}">Devour it!</button>
+	</p>
+	{{/each}}
+</div>
+
+<div id="right">
+	{{#each eatenburger}}
+	<p>
+		{{id}}. {{burger_name}}
+	</p>
+	{{/each}}
+</div>
+
+<div id="bottom">
+	<form>
+		<input type="text">
+		<br>
+		<button type="submit">Submit</button>
+	</form>
+</div>

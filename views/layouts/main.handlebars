@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Eat Da Burger</title>
+		<style>
+			body {
+				background-color: rgb(255,255,200);
+				width: 400px;
+				margin: auto;
+			}
+			h1 {
+				text-align: center;
+			}
+			#left {
+				background-color: rgb(255,200,200);
+				float: left;
+			}
+			#right {
+				background-color: rgb(200,255,200);
+				float: right;
+			}
+			#bottom {
+				background-color: rgb(200,200,255);
+				clear: both;
+				margin: auto;
+				width: 300px;
+				text-align: center;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery.js"></script>
+	</head>
+
+	<body>
+
+		<h1>Eat-Da-Burger</h1>
+
+		{{{ body }}}
+
+		<script>
+			$("form button").click(function(event) {
+				event.preventDefault();
+				location.reload(true);
+				var params = {
+					burger_name: $("input").val().trim(),
+					devoured: 0
+				};
+				$.post("/add", params);
+			});
+
+			$("p button").click(function(event) {
+				event.preventDefault();
+				location.reload(true);
+				var buttonId = $(this).attr("id");
+				$.post("/devour", {id: buttonId});
+			});
+		</script>
+
+	</body>
+
+</html>

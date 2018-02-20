@@ -4,30 +4,26 @@ var connection = require("./connection.js");
 
 var orm = {
 
-	selectAll: function() {
+	selectAll: function(response, renderFunction) {
 		connection.query("SELECT * FROM burgers", (err, res) => {
 			if (err) throw err;
-			return res;
+			renderFunction(response, res);
 		});
 	},
 
-	insertOne: function() {
-		connection.query("INSERT INTO burgers SET ?",
-		{
-			burger_name: burger_name,
-			devoured: devoured
-		},
+	insertOne: function(params) {
+		connection.query("INSERT INTO burgers SET ?", params,
 		(err, res) => {
 			if (err) throw err;
-			return res;
+			console.log(res);
 		});
 	},
 	
-	updateOne: function() {
-		connection.query("UPDATE burgers SET devoured=" + input + " WHERE ege",
+	updateOne: function(params) {
+		connection.query("UPDATE burgers SET devoured=1 WHERE ?", params,
 		(err, res) => {
 			if (err) throw err;
-			return res;
+			console.log(res);
 		});
 	}
 }
