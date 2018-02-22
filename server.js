@@ -24,7 +24,7 @@ app.set("view engine", "handlebars");
 
 
 // Routes
-app.get("/index", function(request, response) {
+app.get("/", function(request, response) {
 	orm.selectAll(response, renderFunction);
 });
 
