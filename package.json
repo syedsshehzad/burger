@@ -2,11 +2,9 @@
   "name": "burger",
   "version": "1.0.0",
   "description": "The twelfth homework assignment",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-  	"start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
