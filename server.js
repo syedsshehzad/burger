@@ -10,7 +10,7 @@ var orm = require("./config/orm.js");
 var dataIn = require("./models/burger.js");
 var exphbs = require("express-handlebars");
 var app = express();
-var renderFunction = require("./renderFunction.js");
+var renderFunction = require("./controllers/renderFunction.js");
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
